@@ -1,0 +1,184 @@
+%
+% @author   Shmish  "shmish90@gmail.com"
+% @legal    MIT     "(c) Christopher Schmitt"
+%
+
+
+\documentclass{article}
+
+
+%
+% Document Imports
+%
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+
+
+
+%
+% Document Configuation
+%
+
+\newcommand{\hwAuthor}{Christopher Schmitt}
+\newcommand{\hwSubject}{Math 218}
+\newcommand{\hwSection}{Section 81}
+\newcommand{\hwSemester}{Summer 2019}
+\newcommand{\hwAssignment}{Assignment 1}
+
+
+%
+% Document Enviornments
+%
+
+\setlength{\headheight}{65pt}
+\pagestyle{fancy}
+\lhead{\hwAuthor}
+\rhead{
+  \hwSubject \\
+  \hwSection \\
+  \hwSemester \\
+  \hwAssignment
+}
+
+\newenvironment{problem}[1]{
+  \nobreak\section*{Problem #1}
+}{}
+
+
+%
+% Document Start
+%
+
+\begin{document}
+  \begin{problem}{1}
+    Are the following statements TRUE or FALSE? Explain why.
+    
+    \begin{enumerate}
+      \item[(a)] If $\pi$ is rational, then so is $2$
+      \item[(b)] If $\pi$ is irrational, then so is $2$
+    \end{enumerate}
+    
+    \noindent\textbf{Solution}
+
+    \begin{enumerate}
+      \item[(a)] True, since $False \rightarrow True$
+      \item[(b)] False, since $True \nrightarrow False$ 
+    \end{enumerate}
+  \end{problem}
+
+  \begin{problem}{2}
+    Consider the statement: “If an animal is an rhinoceros, then it has a horn.”
+
+    \begin{enumerate}
+      \item[(a)] Write down the CONVERSE of this statement.
+      \item[(b)] Write down the CONTRAPOSITIVE of this statement. 
+    \end{enumerate}
+
+    \noindent\textbf{Solution}
+
+    \begin{enumerate}
+      \item[(a)] "If an animal has a horn, then it is a rhinoceros"
+      \item[(b)] "If an animal does not have a horn, then it is not a rhinoceros" 
+    \end{enumerate}
+  \end{problem}
+
+  \begin{problem}{3}
+    Let $x$ be a real number. Using the definition of rational number, write a direct proof of the following: If $x$ is rational, then $x^2 + 5$ is also rational.
+
+    \begin{proof}
+      Let $x$ be a rational number.
+      \begin{equation*}
+        \begin{split}
+          x & = \frac{a}{b}\text{, where $a, b$ are integers and $b \neq 0$ }\\
+          x^2 & = \frac{a^2}{b^2}\\
+          x^2 + 5 & = \frac{a^2}{b^2} + 5\\
+          x^2 + 5 & = \frac{a^2 + 5b^2}{b^2}\text{, which is rational.}
+        \end{split}
+      \end{equation*}
+    \end{proof}
+  \end{problem}
+
+  \begin{problem}{4}
+    Let $x$ be a positive real number. Using the definition of a rational number, write a proof by contraposition of the following: If $x$ irrational, then $\sqrt{x + 6}$ is also irrational.
+    
+    \begin{proof}
+      (By contraposition) Let $\sqrt{x + 6}$ be rational.
+      \begin{equation*}
+        \begin{split}
+          \sqrt{x + 6} & = \frac{a}{b}\text{, where $a, b$ are integers and $b \neq 0$}\\
+          x + 6 & = \frac{a^2}{b^2}\\
+          x & = \frac{a^2}{b^2} - 6\\
+          x & = \frac{a^2 - 6b^2}{b^2}\text{, which is rational}
+        \end{split}
+      \end{equation*}
+    \end{proof}
+  \end{problem}
+
+  \begin{problem}{5}
+    let $n$ be an integer. Using the definition of odd/even, write a proof of the following: $n$ is even if and only if $2n^2 + 5n + 7$ is odd.
+
+    \begin{proof}($p \Rightarrow q$) Suppose that $n$ is even.
+      \begin{equation*}
+        \begin{split}
+          n & = 2(k)\text{, where $k$ is an integer}\\
+          2n^2 + 5n + 7 & = 2(2k)^2 + 5(2k) + 7\\
+          2n^2 + 5n + 7 & = 8k^2 + 10k + 7\\
+          2n^2 + 5n + 7 & = 8k^2 + 10k + 6 + 1\\
+          2n^2 + 5n + 7 & = 2(4k^2 + 5k + 3) + 1\text{, which is odd.}
+        \end{split}
+      \end{equation*}
+      
+      ($\neg p \Rightarrow \neg q$) Suppose that $n$ is odd.
+      \begin{equation*}
+        \begin{split}
+          n & = 2(k) + 1\text{, where $k$ is an integer}\\
+          2n^2 + 5n + 7 & = 2(2k + 1)^2 + 5(2k + 1) + 7\\
+          2n^2 + 5n + 7 & = 8k^2 + 18k + 14\\
+          2n^2 + 5n + 7 & = 2(4k^2 + 9k + 7)\text{, which is even.}
+        \end{split}
+      \end{equation*}
+    \end{proof}
+  \end{problem}
+
+  \begin{problem}{6}
+    Using the definition of odd and even, write a proof of the following: $n^2 + 3n + 7$ is odd.
+
+    \begin{proof}(By cases) Suppose that $n$ is even.
+      \begin{equation*}
+        \begin{split}
+          n & = 2(k)\text{, where k is an integer}\\
+          n^2 + 3n + 7 & = (2k)^2 + 3(2k) + 7\\
+          n^2 + 3n + 7 & = 4k^2 + 6k + 7\\
+          n^2 + 3n + 7 & = 4k^2 + 6k + 6 + 1\\
+          n^2 + 3n + 7 & = 2(2k^2 + 3k + 3) + 1\text{, which is odd.}
+        \end{split}
+      \end{equation*}
+      
+      Suppose that $n$ is odd.
+      \begin{equation*}
+        \begin{split}
+          n & = 2(k) + 1\text{, where k is an integer}\\
+          n^2 + 3n + 7 & = (2k + 1)^2 + 3(2k + 1) + 7\\
+          n^2 + 3n + 7 & = 4k^2 + 10k + 11\\
+          n^2 + 3n + 7 & = 4k^2 + 10k + 10 + 1\\
+          n^2 + 3n + 7 & = 2(2k^2 + 5k + 5) + 1\text{, which is odd.}\\
+        \end{split}
+      \end{equation*}
+    \end{proof}
+  \end{problem}
+
+  \begin{problem}{7}
+    Prove that there exists positive integers $a, b$ such that $a^2 + b^2 = 100$
+
+    \begin{proof}(By example)
+      \begin{equation*}
+        6^2 + 8^2 = 100
+      \end{equation*}
+    \end{proof}
+  \end{problem}
+\end{document}
