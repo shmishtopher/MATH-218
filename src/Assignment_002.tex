@@ -1,0 +1,169 @@
+%
+% @author   Shmish  "shmish90@gmail.com"
+% @legal    MIT     "(c) Christopher Schmitt"
+%
+
+
+\documentclass{article}
+
+
+%
+% Document Imports
+%
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{color}
+
+
+
+%
+% Document Configuation
+%
+
+\newcommand{\hwAuthor}{Christopher Schmitt}
+\newcommand{\hwSubject}{Math 218}
+\newcommand{\hwSection}{Section 81}
+\newcommand{\hwSemester}{Summer 2019}
+\newcommand{\hwAssignment}{Assignment 2}
+
+
+%
+% Document Enviornments
+%
+
+\setlength{\headheight}{65pt}
+\pagestyle{fancy}
+\lhead{\hwAuthor}
+\rhead{
+  \hwSubject \\
+  \hwSection \\
+  \hwSemester \\
+  \hwAssignment
+}
+
+\newenvironment{problem}[1]{
+  \nobreak\section*{Problem #1}
+}{}
+
+
+%
+% Document Start
+%
+
+\begin{document}
+  \begin{problem}{1}
+    Let $x$ be a fixed positive real number. Prove that there exists a unique positive real number $y$ such that $xy = 3$.
+    \begin{proof} Let $x$ be a fixed positive real.
+      \begin{equation*}
+        \begin{split}
+          xy & = 3\\
+          \frac{xy}{x} & = \frac{3}{x}\\
+          y & = \frac{3}{x}\text{, which is a positive real.}
+        \end{split}
+      \end{equation*}
+      Suppose $x(y_1) = 3$\\
+      Suppose $x(y_2) = 3$
+      \begin{equation*}
+        \begin{split}
+          x(y_1) & = x(y_2)\\
+          \frac{x(y_1)}{x} & = \frac{x(y_2)}{x}\\
+          y_1 & = y_2\text{, thus any two solution are the same.}
+        \end{split}
+      \end{equation*}
+    \end{proof}
+  \end{problem}
+
+  \begin{problem}{2}
+    Write the negation of the following statement in English. Do not simply add the words “not” or “it is not the case that” or similar before the existing statement.
+    \begin{center}
+      “Every dog likes some flavor of Brand XYZ dog food.”
+    \end{center}
+    \textbf{Solution}
+    \begin{center}
+      “Some dog does not like any flavor of Brand XYZ dog food.”
+    \end{center}
+  \end{problem}
+
+  \begin{problem}{3}
+    Consider the following compound statements:
+    \begin{center}
+      $(p \implies q) \wedge (\neg r \implies q)$ and $(p \vee \neg r) \implies q$
+    \end{center}
+    are logically equivalent by constructing truth tables.
+    \begin{center}
+    \begin{tabular}{@{ }c@{ }@{ }c@{ }@{ }c | c@{ }@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{}c@{}@{ }c@{ }@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{ }c@{ }@{}c@{}@{ }c}
+      p & q & r &  & ( & p & $\rightarrow$ & q & ) & $\&$ & ( & $\sim$ & r & $\rightarrow$ & q & ) & \\
+      \hline 
+      T & T & T &  &  & T & T & T &  & \textcolor{red}{T} &  & F & T & T & T &  & \\
+      T & T & F &  &  & T & T & T &  & \textcolor{red}{T} &  & T & F & T & T &  & \\
+      T & F & T &  &  & T & F & F &  & \textcolor{red}{F} &  & F & T & T & F &  & \\
+      T & F & F &  &  & T & F & F &  & \textcolor{red}{F} &  & T & F & F & F &  & \\
+      F & T & T &  &  & F & T & T &  & \textcolor{red}{T} &  & F & T & T & T &  & \\
+      F & T & F &  &  & F & T & T &  & \textcolor{red}{T} &  & T & F & T & T &  & \\
+      F & F & T &  &  & F & T & F &  & \textcolor{red}{T} &  & F & T & T & F &  & \\
+      F & F & F &  &  & F & T & F &  & \textcolor{red}{F} &  & T & F & F & F &  & \\
+    \end{tabular}
+    \end{center}
+    \begin{center}
+      \begin{tabular}{@{ }c@{ }@{ }c@{ }@{ }c | c@{ }@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{ }c@{ }@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c}
+        p & q & r &  & ( & p & $\lor$ & $\sim$ & r & ) & $\rightarrow$ & q & \\
+        \hline 
+        T & T & T &  &  & T & T & F & T &  & \textcolor{red}{T} & T & \\
+        T & T & F &  &  & T & T & T & F &  & \textcolor{red}{T} & T & \\
+        T & F & T &  &  & T & T & F & T &  & \textcolor{red}{F} & F & \\
+        T & F & F &  &  & T & T & T & F &  & \textcolor{red}{F} & F & \\
+        F & T & T &  &  & F & F & F & T &  & \textcolor{red}{T} & T & \\
+        F & T & F &  &  & F & T & T & F &  & \textcolor{red}{T} & T & \\
+        F & F & T &  &  & F & F & F & T &  & \textcolor{red}{T} & F & \\
+        F & F & F &  &  & F & T & T & F &  & \textcolor{red}{F} & F & \\
+        \end{tabular}
+    \end{center}
+  \end{problem}
+
+  \begin{problem}{4}
+    Prove that the compound statements in Problem 3 are logically equivalent by using the basic logical equivalences. At each step, state which basic logical equivalence you are using.
+    \begin{enumerate}
+      \item $(p \implies q) \wedge (\neg r \implies q)$
+    \end{enumerate}
+    Since $(p \implies q) \wedge (r \implies q) \equiv (p \vee r) \implies q$, we can skip right to:
+    \begin{enumerate}
+      \item[2.] $(p \vee \neg r) \implies q$ 
+    \end{enumerate}
+  \end{problem}
+
+  \begin{problem}{5}
+    Write the compound statements in Problem 3 in disjunctive normal form. (Since they are logically equivalent, they have the same disjunctive normal form, so you only need to give one answer.
+    \begin{center}
+      $(p \wedge q \wedge r) \vee (p \wedge q \wedge \neg r) \vee (\neg p \wedge q \wedge r) \vee (\neg p \wedge q \wedge \neg r) \vee (\neg p \wedge \neg q \wedge r)$
+    \end{center}
+  \end{problem}
+
+  \begin{problem}{6}
+    Consider the premises:
+    \begin{enumerate}
+      \item It is not snowing today and it is windy;
+      \item School will be canceled only if it is snowing today;
+      \item If school is not canceled today, then our study group will meet;
+      \item If I did not get A on the exam, then our study group did not meet.
+    \end{enumerate}
+    Do these premises imply the conclusion “I will get A or B on the exam”? If so, explain why by using the rules of inference. If not, explain why not.
+    \begin{enumerate}
+      \item $\neg S \wedge W$
+      \item $C \iff S$
+      \item $\neg C \implies G$
+      \item $\neg A \implies \neg G$
+    \end{enumerate}
+    \textbf{Steps}
+    \begin{enumerate}
+      \item Contrapositive of 4: $G \implies A$
+      \item School is not canceled because $C \iff S$ and $\neg S \wedge W$
+      \item School is not canceled, so the group meets because $\neg C \implies G$
+      \item And $G \implies A$ as seen earlier. So $A \vee B$ is true because $G$ is true.
+    \end{enumerate}
+  \end{problem}
+\end{document}
