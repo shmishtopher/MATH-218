@@ -1,0 +1,373 @@
+%
+% @author   Shmish  "shmish90@gmail.com"
+% @legal    MIT     "(c) Christopher Schmitt"
+%
+
+
+\documentclass{article}
+
+
+%
+% Document Imports
+%
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{color}
+
+
+
+%
+% Document Configuation
+%
+
+\newcommand{\hwAuthor}{Christopher Schmitt}
+\newcommand{\hwSubject}{Math 218}
+\newcommand{\hwSection}{Section 81}
+\newcommand{\hwSemester}{Summer 2019}
+\newcommand{\hwAssignment}{Assignment 3}
+
+
+%
+% Document Enviornments
+%
+
+\setlength{\headheight}{65pt}
+\pagestyle{fancy}
+\lhead{\hwAuthor}
+\rhead{
+  \hwSubject \\
+  \hwSection \\
+  \hwSemester \\
+  \hwAssignment
+}
+
+\newenvironment{problem}[1]{
+  \nobreak\section*{Problem #1}
+}{}
+
+
+%
+% Document Start
+%
+
+\begin{document}
+  \begin{problem}{1}
+    Let $R$ be the relation on the set $Q$ defined by:
+    \begin{center}
+      $(a, b) \in R \text{ if and only if } |a - b| \le 4$
+    \end{center}
+    
+    $R$ is Reflexive.
+    \begin{proof}
+      Let $a \in Q$
+      \begin{equation*}
+        \begin{split}
+          |a - a| & \le 4\\
+          |0| & \le 4\\
+          0 & \le 4\\
+          (a, a) & \in R
+        \end{split}
+      \end{equation*}
+    \end{proof}
+
+    $R$ is Symmetric.
+    \begin{proof}
+      Let $a, b \in Q$, Suppose $(a, b) \in R$
+      \begin{equation*}
+        \begin{split}
+          |a - b| & \le 4\\
+          |b - a| & \le 4 \text{ [Absolute value]}\\
+          (b, a) & \in Q 
+        \end{split}
+      \end{equation*}
+    \end{proof}
+
+    $R$ is not Transitive.
+    \begin{proof}
+      \begin{equation*}
+        \begin{split}
+          |10 - 6| \le 4 & \wedge |6 - 2| \le 4\\
+          |10 - 2| & > 4
+        \end{split}
+      \end{equation*}
+    \end{proof}
+
+    $R$ is not Antisymmetric.
+    \begin{proof}
+      \begin{equation*}
+        \begin{split}
+          |10 - 6| & \le 4 \\
+          |6 - 10| & \le 4
+        \end{split}
+      \end{equation*}
+    \end{proof}
+  \end{problem}
+
+  \begin{problem}{2}
+    Let $R$ be the relation on the set $R$ defined by:
+    \begin{center}
+      $(a, b) \in R \text{ if and only if } 5a = b$
+    \end{center}
+
+    $R$ is not Reflexive.
+    \begin{proof}
+      Let $a \in R$
+      \begin{equation*}
+        5a \neq a \text{ [In General]}
+      \end{equation*}
+    \end{proof}
+
+    $R$ is not Symmetric.
+    \begin{proof}
+      Let $a, b \in R$
+      \begin{equation*}
+        \begin{split}
+          5(5) & = 25\\
+          5(25) & \neq 5
+        \end{split}
+      \end{equation*}
+    \end{proof}
+
+    $R$ is not Transitive.
+    \begin{proof}
+      Let $a, b, c \in R$, Suppose $(a, b), (b, c) \in R$
+      \begin{equation*}
+        \begin{split}
+          5(1) & = 5\\
+          5(5) & = 25\\
+          5(1) & \neq 25
+        \end{split}
+      \end{equation*}
+    \end{proof}
+
+    $R$ is Antisymmetric.
+    \begin{proof}
+      Let $a, b \in R$, Suppose $(a, b), (b, a) \in R$
+      \begin{equation*}
+        \begin{split}
+          5(a) = b & \wedge 5(b) = a\\
+          5(5(b)) & = b\\
+          25(b) & = b \text{ iff $b = 0$}\\
+          5(5(a)) & = a\\
+          25(a) & = a \text{ iff $a = 0$}\\
+        \end{split}
+      \end{equation*}
+      $a$ and $b$ must both the same if $(a, b), (b, a) \in R$, so $R$ is Antisymmetric
+    \end{proof}
+  \end{problem}
+
+  \begin{problem}{3}
+    Let R be the relation on the set Z defined by:
+    \begin{center}
+      $(a, b) \in \text{ if and only if } ab \ge 1$
+    \end{center}
+
+    $R$ is not Reflexive.
+    \begin{proof}
+      \begin{equation*}
+        0(0) < 1
+      \end{equation*}
+    \end{proof}
+
+    $R$ is Symmetric.
+    \begin{proof}
+      Let $a, b \in Z$, Suppose $(a, b) \in R$
+      \begin{equation*}
+        \begin{split}
+          a(b) & \ge 1\\
+          b(a) & \ge 1
+        \end{split}
+      \end{equation*}
+    \end{proof}
+
+    $R$ is Transitive.
+    \begin{proof}
+      Let $a, b, c \in Z$, Suppose $(a, b), (b, c) \in  R$
+      \begin{equation*}
+        \begin{split}
+          ab \ge 1 & \wedge bc \ge 1\\
+          (ab)(bc) & \ge 1\\
+          acb^2 & \ge 1\\
+          ac & \ge b^{-2}
+        \end{split}
+      \end{equation*}
+    \end{proof}
+
+    $R$ is not Antisymmetric.
+    \begin{proof}
+      \begin{equation*}
+        \begin{split}
+          1(2) & \ge 1\\
+          2(1) & \ge 1
+        \end{split}
+      \end{equation*}
+    \end{proof}
+  \end{problem}
+
+  \begin{problem}{4}
+    Let $R$ be the relation on the set $Z \times Z$ defined by:
+    \begin{center}
+      $((a, b),(c, d)) \in R \text{ if and only if } a + 2b \le c + 2d$
+    \end{center}
+
+    $R$ is Reflexive.
+    \begin{proof}
+      Let $(a, b) \in Z \times Z$
+      \begin{equation*}
+        \begin{split}
+          a + 2(b) & \le a + 2(b)\\
+          ((a, b), (a, b)) & \in R
+        \end{split}
+      \end{equation*}
+    \end{proof}
+
+    $R$ is not Symmetric.
+    \begin{proof}
+      Let $(a, b), (c, d) \in Z \times Z$, Suppose $((a, b), (c, d)) \in R$
+      \begin{equation*}
+        \begin{split}
+          0 + 2(0) & \le 1 + 2(1)\\
+          0 & \le 2\\
+          1 + 2(1) & > 0 + 2(0)\\
+          3 & > 0
+        \end{split}
+      \end{equation*}
+    \end{proof}
+
+    $R$ is Transitive.
+    \begin{proof}
+      Let $(a, b), (c, d), (e, f) \in Z \times Z$, Suppose $(a, b) R (c, d) \wedge (c, d) R (e, f)$
+      \begin{equation*}
+        \begin{split}
+          a + 2(b) \le c + 2(d) & \wedge c + 2(d) \le e + 2(f)\\
+          a + 2(b) & \le e + 2(f) 
+        \end{split}
+      \end{equation*}
+    \end{proof}
+
+    $R$ is Antisymmetric.
+    \begin{proof}
+      Let $(a, b), (c, d) \in Z \times Z$, Suppose $(a, b) R (c, d)$
+      \begin{equation*}
+        \begin{split}
+          a + 2(b) & \le c + 2(d)\\
+          c + 2(d) & \le a + 2(b)\\
+          a + 2(b) & = c + 2(b)
+        \end{split}
+      \end{equation*}
+    \end{proof}
+  \end{problem}
+
+  \begin{problem}{5}
+    Let $\sim$ be the relation on the set $Z$ defined by:
+    \begin{center}
+      $a \sim b \text{ if and only if } a = \pm b$.
+    \end{center}
+
+    $\sim$ is Reflexive.
+    \begin{proof}
+      Let $a \in Z$
+      \begin{equation*}
+        \begin{split}
+          a & = \pm a\\
+          a^2 & = (\pm a)^2\\
+          a^2 & = a^2
+        \end{split}
+      \end{equation*}
+    \end{proof}
+
+    $\sim$ is Symmetric.
+    \begin{proof}
+      Let $a, b \in Z$, Suppose $a \sim b$
+      \begin{equation*}
+        \begin{split}
+          a & = \pm b\\
+          a = b & \vee a = -b\\
+          a = b & \implies b = a\\
+          a = -b \implies -b & = a \implies b = -a
+        \end{split}
+      \end{equation*}
+    \end{proof}
+
+    $\sim$ is Transitive.
+    \begin{proof}
+      Let $a, b, c \in Z$, Suppose $a \sim b, b \sim c$
+      \begin{equation*}
+        \begin{split}
+          a & = \pm b\\
+          a^2 & = (\pm b)^2\\
+          a^2 & = b^2\\
+          b & = \pm c\\
+          b^2 & = (\pm c)^2\\
+          b^2 & = c^2\\
+          a^2 = & ~ b^2 = c^2\\
+          a^2 & = b^2
+        \end{split}
+      \end{equation*}
+    \end{proof}
+
+    Find all the elements in the class $\bar{7}$
+    \begin{center}
+      $\bar{7} = \{7, -7\}$
+    \end{center}
+  \end{problem}
+
+  \begin{problem}{6}
+    Let $\sim$ be the relation on the set $Z$ defined by:
+    \begin{center}
+      $a \sim b \text{ if and only if } 8 \text{ is a divisor of } 7a + b$
+    \end{center}
+
+    $\sim$ is Reflexive.
+    \begin{proof}
+      Let $a \in Z$
+      \begin{equation*}
+        \begin{split}
+          8 & | 7(a) + a\\
+          8(k) = 7(a) & + a \text{ where $K \in \mathbb Z$ }\\
+          8(k) & = 8(a)
+        \end{split}
+      \end{equation*}
+    \end{proof}
+
+    $\sim$ is Symmetric.
+    \begin{proof}
+      Let $a, b \in Z$
+      \begin{equation*}
+        \begin{split}
+          8 & | 7(a) + b\\
+          8(k) = 7(a) & + b \text{, where $k \in \mathbb Z$}\\
+          -8(k) & = -7(a) - b\\
+          -8(k) + 8(a) + 8(b) & = -7(a) + 8(a) - b + 8(b)\\
+          8(-k + a + b) & = a + 7(b)\\
+          8(-k + a + b) & = 7(b) + a
+        \end{split}
+      \end{equation*}
+    \end{proof}
+
+    $\sim$ is Transitive.
+    \begin{proof}
+      Let $a, b, c \in Z$, Suppose $a \sim b, b \sim c$
+      \begin{equation*}
+        \begin{split}
+          8 | 7(a) + b & \wedge 8 | 7(b) + c\\
+          8(k) = 7(a) + b & \wedge 8(j) = 7(b) + c \text{, where $k, j \in \mathbb Z$}\\
+          8(k) + 8(j) & = 7(a) + b + 7(b) + c\\
+          8(k) + 8(j) & = 7(a) + 8(b) + c\\
+          8(k) + 8(j) - 8(b) & = 7(a) + c\\
+          8(k + j - b) & = 7(a) + c
+        \end{split}
+      \end{equation*}
+    \end{proof}
+
+    Find four elements in the equivalence class $\bar{5}$
+    \begin{center}
+      $\bar{5} = \{5, 13, 21, 29\}$
+    \end{center}
+  \end{problem}
+\end{document}
