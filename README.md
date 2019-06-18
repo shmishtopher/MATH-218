@@ -10,3 +10,7 @@ Assignments and notes for MATH 218 with professor Latour.  All source files can 
 * Assignment 002
   - [TeX File](https://github.com/shmishtopher/MATH-218/blob/master/src/Assignment_002.tex)
   - [PDF File](https://github.com/shmishtopher/MATH-218/blob/master/out/Assignment_002.pdf)
+
+* Assignment 003
+  - [TeX File](https://github.com/shmishtopher/MATH-218/blob/master/src/Assignment_003.tex)
+  - [PDF File](https://github.com/shmishtopher/MATH-218/blob/master/out/Assignment_003.pdf)
