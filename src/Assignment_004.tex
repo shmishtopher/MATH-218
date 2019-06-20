@@ -1,0 +1,203 @@
+%
+% @author   Shmish  "shmish90@gmail.com"
+% @legal    MIT     "(c) Christopher Schmitt"
+%
+
+
+\documentclass{article}
+
+
+%
+% Document Imports
+%
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{color}
+\usepackage{tikz}
+
+
+
+%
+% Document Configuation
+%
+
+\newcommand{\hwAuthor}{Christopher Schmitt}
+\newcommand{\hwSubject}{Math 218}
+\newcommand{\hwSection}{Section 81}
+\newcommand{\hwSemester}{Summer 2019}
+\newcommand{\hwAssignment}{Assignment 4}
+
+
+%
+% Document Enviornments
+%
+
+\setlength{\headheight}{65pt}
+\pagestyle{fancy}
+\lhead{\hwAuthor}
+\rhead{
+  \hwSubject \\
+  \hwSection \\
+  \hwSemester \\
+  \hwAssignment
+}
+
+\newenvironment{problem}[1]{
+  \nobreak\section*{Problem #1}
+}{}
+
+
+%
+% Document Start
+%
+
+\begin{document}
+  \begin{problem}{1}
+    Let $\preceq$ be the relation on the set $A = \{2, 3, 5, 8, 25, 30, 300\}$ defined by:
+    \begin{center}
+      $a \preceq b$ iff $a$ is a divisor of $b$
+    \end{center}
+    $\preceq$ is a partial order on $A$ (you do not need to prove this).  Answer each of the following.
+
+    \begin{flushleft}
+      \textbf{(a)} Draw the hasse diagram for this partially ordered set.
+    \end{flushleft}
+
+    \begin{center}
+      \begin{tikzpicture}[scale=1.5]
+        \node (300) at (1, 0) {$300$};
+        \node (8) at (0, -1) {$8$};
+        \node (30) at (1, -1) {$30$};
+        \node (25) at (2, -1) {$25$};
+        \node (2) at (0, -2) {$2$};
+        \node (3) at (1, -2) {$3$};
+        \node (5) at (2, -2) {$5$};
+        \draw (30) -- (300) -- (25) -- (5) -- (30) -- (3) -- (30) -- (2) -- (8);
+      \end{tikzpicture}
+    \end{center}
+
+    \begin{enumerate}
+      \item[\textbf{(b)}] What are the maximal elements for this poset? $\{8, 300\}$
+      \item[\textbf{(c)}] What are the maximum elements for this poset? None
+      \item[\textbf{(d)}] What are the minimal elements for this poset? $\{2, 3, 5\}$
+      \item[\textbf{(e)}] What are the minimum elements for this poset? None
+      \item[\textbf{(f)}] Find $2 \vee 3$. $30$
+      \item[\textbf{(g)}] Find $8 \vee 25$. Does not exist
+      \item[\textbf{(h)}] Find $8 \wedge 300$. $2$ 
+      \item[\textbf{(i)}] Find $8 \wedge 25$. Does not exist 
+    \end{enumerate}
+  \end{problem}
+
+  \begin{problem}{2}
+    Prove that the function $f : Q \rightarrow Q$ defined by $f(x) = 3x + 7$ is injective.
+    \begin{proof}
+      Let $a, b \in Q$, Suppose $f(a) = f(b)$
+      \begin{equation*}
+        \begin{split}
+          3(a) + 7 & = 3(b) + 7\\
+          3(a) & = 3(b)\\
+          a & = b\\
+        \end{split}
+      \end{equation*}
+    \end{proof}
+  \end{problem}
+
+  \begin{problem}{3}
+    Prove that the function $f : R \rightarrow R$ defined by $f(x) = x^{2} - 3x + 5$ is not injective.
+    \begin{proof}
+      \begin{equation*}
+        f(0) = f(3)
+      \end{equation*}
+    \end{proof}
+  \end{problem}
+
+  \begin{problem}{4}
+    Prove that the function $f : Z \times Z \rightarrow Z$ defined by $f(n, m) = 3n - 2m - 1$ is onto.
+    \begin{proof}
+      Let $k \in Z$
+      \begin{equation*}
+        \begin{split}
+          f(n, m) & = 3(n) - 2(m) - 1\\
+          f(2, 2) & = 3(2) - 2(2) - 1 = 1\\
+          f(2k, 2k) & = 3(2k) - 2(2k) - 1\\
+          f(2k, 2k) & = k(1) = k
+        \end{split}
+      \end{equation*}
+    \end{proof}
+  \end{problem}
+
+  \begin{problem}{5}
+    Prove that the function $f : Z \rightarrow Z$ defined by $f(n) = 3n + 2$ is not onto.
+    \begin{proof}
+      \begin{equation*}
+        \begin{split}
+          1 & \in Z\\
+          1 & = 3n + 2\\
+          -1 & = 3n\\
+          \frac{-1}{3} & = n\\
+          \frac{-1}{3} & \notin Z
+        \end{split}
+      \end{equation*}
+      So $f : Z \rightarrow Z$ cannot produce the value $1$, and therefore cannot be onto.
+    \end{proof}
+  \end{problem}
+
+  \begin{problem}{6}
+    Let $f : R \setminus \{4\} \rightarrow R$ be the function defined by $f(x) = \frac{2x + 7}{x - 4}$
+    \begin{flushleft}
+      \textbf{(a)} Prove that this function is injective.
+    \end{flushleft}
+    \begin{proof}
+      Let $a, b \in R \setminus \{4\}$ Suppose $f(a) = f(b)$
+      \begin{equation*}
+        \begin{split}
+          \frac{2(a) + 7}{a - 4} & = \frac{2(b) + 7}{b - 4}\\
+          (2(a) + 7)(b - 4) & = (2(b) + 7)(a - 4)\\
+          2ab - 8a + 7b - 28 & = 2ab - 8b + 7a - 28\\
+          -8a + 7b & = -8b + 7a\\
+          15b & = 15a\\
+          b & = a\\
+        \end{split}
+      \end{equation*}
+    \end{proof}
+
+    \begin{flushleft}
+      \textbf{(b)} This function is not onto. Determine which element should be removed from the codomain to make it onto. Prove that $f$ is onto when this element is removed from the codomain, and find the inverse $f^{-1}$.
+    \end{flushleft}
+
+    \begin{center}
+      $f : R \setminus \{4\} \rightarrow R \setminus \{2\}$
+    \end{center}
+
+    \begin{proof}
+      Let $r \in R \setminus \{2\}$
+      \begin{equation*}
+        \begin{split}
+          r & = \frac{2x + 7}{x - 4}\\
+          r(x - 4) & = 2x + 7\\
+          rx - 4r & = 2x + 7\\
+          rx - 4r - 2x + 8 & = 15\\
+          (r - 2)(x - 4) & = 15\\
+          x - 4 & = \frac{15}{r - 2}\\
+          x & = \frac{15}{r - 2} + 4\\
+          x & = \frac{15 + 4(r - 2)}{r - 2}\\
+          x & = \frac{7 + 4r}{r - 2}\\
+          f(\frac{7 + 4r}{r - 2}) & = r \text{, where $r \neq 2$}
+        \end{split}
+      \end{equation*}
+    \end{proof}
+
+    \begin{center}
+      $f^{-1} : R \setminus \{2\} \rightarrow R \setminus \{4\}$\\
+    \end{center}
+
+    \begin{center}
+      $f^{-1}(x) = \frac{7 + 4r}{r - 2}$
+    \end{center}
+  \end{problem}
+\end{document}
