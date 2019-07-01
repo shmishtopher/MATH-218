@@ -1,0 +1,164 @@
+%
+% @author   Shmish  "shmish90@gmail.com"
+% @legal    MIT     "(c) Christopher Schmitt"
+%
+
+
+\documentclass{article}
+
+
+%
+% Document Imports
+%
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{color}
+\usepackage{tikz}
+
+
+
+%
+% Document Configuation
+%
+
+\newcommand{\hwAuthor}{Christopher Schmitt}
+\newcommand{\hwSubject}{Math 218}
+\newcommand{\hwSection}{Section 81}
+\newcommand{\hwSemester}{Summer 2019}
+\newcommand{\hwAssignment}{Assignment 5}
+
+
+%
+% Document Enviornments
+%
+
+\setlength{\headheight}{65pt}
+\pagestyle{fancy}
+\lhead{\hwAuthor}
+\rhead{
+  \hwSubject \\
+  \hwSection \\
+  \hwSemester \\
+  \hwAssignment
+}
+
+\newenvironment{problem}[1]{
+  \nobreak\section*{Problem #1}
+}{}
+
+
+%
+% Document Start
+%
+
+\begin{document}
+  \begin{problem}{1}
+    \begin{center}
+      \textbf{(a)} Prove that the set $12\mathbf{Z}$ of all multiples of $12$ is countably infinite. 
+    \end{center}
+    \begin{center}
+      \begin{tikzpicture}[scale=1]
+        \node (1) at (0, 1) {$1$};
+        \node (2) at (1, 1) {$2$};
+        \node (3) at (2, 1) {$3$};
+        \node (4) at (3, 1) {$4$};
+        \node (5) at (4, 1) {$5$};
+        \node (6) at (5, 1) {$6$};
+        \node (7) at (6, 1) {$\dots$};
+        \node (0) at (0, 0) {$0$};
+        \node (12) at (1, 0) {$12$};
+        \node (-12) at (2, 0) {$-12$};
+        \node (24) at (3, 0) {$24$};
+        \node (-24) at (4, 0) {$-24$};
+        \node (36) at (5, 0) {$36$};
+        \node (-36) at (6, 0) {$\dots$};
+
+        \draw (1) -- (0);
+        \draw (2) -- (12);
+        \draw (3) -- (-12);
+        \draw (4) -- (24);
+        \draw (5) -- (-24);
+        \draw (6) -- (36);
+      \end{tikzpicture}
+    \end{center}
+    
+    \begin{center}
+      \textbf{(b)} Prove that the set $\mathbf{Z}^{+} \times \mathbf{Z}^{+}$ is countably infinite.
+    \end{center}
+    \begin{center}
+      \begin{tikzpicture}[scale=1.5]
+        \node (1) at (1, 1) {$(1, 1)$};
+        \node (2) at (1, 2) {$(1, 2)$};
+        \node (3) at (2, 1) {$(2, 1)$};
+        \node (4) at (3, 1) {$(3, 1)$};
+        \node (5) at (2, 2) {$(2, 2)$};
+        \node (6) at (1, 3) {$(1, 3)$};
+        \node (7) at (1, 4) {$(1, 4)$};
+        \node (8) at (2, 3) {$(2, 3)$};
+        \node (9) at (3, 2) {$(3, 2)$};
+        \node (10) at (4, 1) {$(4, 1)$};
+ 
+        \draw (1) -- (2) -- (3) -- (4) -- (5) -- (6) -- (7) -- (8) -- (9) --(10);
+      \end{tikzpicture}
+    \end{center}
+  \end{problem}
+
+  \begin{problem}{2}
+    \begin{center}
+      \textbf{(a)} Prove that the set ${x \in \mathbf{R} | 0.53 < x < 0.54}$ (in other words, the interval (0.53, 0.54) is uncountable.
+    \end{center}
+    \begin{center}
+      $f : \mathbf{R} \rightarrow (0.53, 0.54)$\\
+      $f(x) = tan(50\pi(x - 0.535))$\\
+      Since a bijection exists between $\mathbf{R}$ and $(0.53, 0.54)$, $(0.53, 0.54)$ is uncountable.
+    \end{center}
+
+    \begin{center}
+      \textbf{(b)} Let $A$ be the set of all infinite sequences of positive integers. For example, one of the elements of $A$ is the sequence $1, 2, 3, 4, 5, 6, \dots$ Another element of $A$ is the sequence $1, 2, 4, 8, 16, 32, \dots$ Prove that $A$ is uncountable.
+    \end{center}
+    \begin{proof}
+      Suppose that the set $A$ is countably infinite.\\
+      $\implies$ A bijection exists between $A$ and $\mathbf{Z^{+}}$\\
+      $\implies$ Some function, $f : \mathbf{Z^{+}} \rightarrow A$ is onto\\
+      $\implies$ A list can be created matching every member of $A$ to $\mathbf{Z^{+}}$\\
+      However, an element can be constructed that is not in $A$: $x_1, x_2, x_3, ...$, where $x_n$ is any random integer such that $x_n$ is not equal to $k$, where $k$ is the $n$'th element of $n$'th element of the list.  So $f$ cannot be onto. 
+    \end{proof}
+  \end{problem}
+
+  \begin{problem}{3}
+    Find the quotient and the remainder when $a$ is divided by $b$, for the following values of $a$ and $b$:
+    \begin{enumerate}
+      \item[\textbf{(a)}] $a = 148$, $b = 9$, $q = 16$, $r = 4$
+      \item[\textbf{(b)}] $a = -148$, $b = 9$, $q = -17$, $r = 5$
+      \item[\textbf{(c)}] $a = 148$, $b = -9$, $q = -17$, $r = 5$
+      \item[\textbf{(d)}] $a = -148$, $b = -9$, $q = 16$, $r = 4$
+    \end{enumerate}
+  \end{problem}
+
+  \begin{problem}{4}
+    Find the binary and hexadecimal representations of the decimal number 2775.
+    \begin{center}
+      $101011010111_{2}$\\
+      $AD7_{16}$
+    \end{center}
+  \end{problem}
+
+  \begin{problem}{5}
+    Use the Extended Euclidean Algorithm to compute the greatest common divisor of the integers $768$ and $46$, and to express that greatest common divisor in the form $768x + 46y$, where $x, y \in Z$.
+    \begin{center}
+      $2 = 10(768) + 167(46)$
+    \end{center}
+  \end{problem}
+
+  \begin{problem}{6}
+    Factor the integer 155,540 into a product of primes.
+    \begin{center}
+      $2^{2} \times 5 \times 7 \times 11 \times 101$
+    \end{center}
+  \end{problem}
+\end{document}
