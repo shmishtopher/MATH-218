@@ -1,0 +1,123 @@
+%
+% @author   Shmish  "shmish90@gmail.com"
+% @legal    MIT     "(c) Christopher Schmitt"
+%
+
+
+\documentclass{article}
+
+
+%
+% Document Imports
+%
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{color}
+\usepackage{tikz}
+
+
+
+%
+% Document Configuation
+%
+
+\newcommand{\hwAuthor}{Christopher Schmitt}
+\newcommand{\hwSubject}{Math 218}
+\newcommand{\hwSection}{Section 81}
+\newcommand{\hwSemester}{Summer 2019}
+\newcommand{\hwAssignment}{Assignment 6}
+
+
+%
+% Document Enviornments
+%
+
+\setlength{\headheight}{65pt}
+\pagestyle{fancy}
+\lhead{\hwAuthor}
+\rhead{
+  \hwSubject \\
+  \hwSection \\
+  \hwSemester \\
+  \hwAssignment
+}
+
+\newenvironment{problem}[1]{
+  \nobreak\section*{Problem #1}
+}{}
+
+
+%
+% Document Start
+%
+
+\begin{document}
+  \begin{problem}{1}
+    Use the binary exponentiation algorithm to compute the remainder when $3^{85}$ is divided by $53$
+    \begin{equation*}
+      \begin{split}
+        3^{2} & \equiv 9 (mod 53)\\
+        3^{4} & \equiv 28 (mod 53)\\
+        & .\\
+        & .\\
+        & 7
+      \end{split}
+    \end{equation*}
+  \end{problem}
+
+  \begin{problem}{2}
+    \textbf{(a)} Find the inverse (reciprocal) of $21$, modulo $919$.
+    \begin{center}
+      $4 \times 919 + 21(744) \equiv 1 (mod 919)$\\
+      $744$
+    \end{center}
+    \textbf{(b)} Use your answer to part (a) to solve the congruence equation.
+    \begin{center}
+      $21x \equiv 13 (mod 919)$\\
+      $21(744) \equiv 1 (mod 919)$\\
+      $21(9674) \equiv 13 (mod 919)$\\
+      $21(484) \equiv 13 (mod 919)$
+    \end{center}
+  \end{problem}
+
+  \begin{problem}{3}
+    Use the Principle of Mathematical Induction to prove the following formula:
+    \begin{proof}
+      Basis Step: $n = 1$\\
+      LHS = $1 \times 10 = 10$\\
+      RHS = $\frac{1(1 + 1)(1 + 14)}{3} = 10$\\
+      Inductive Step: $n = k$\\
+      $1(10) + 2(11) + 3(12) + \dots + k(k + 9)$\\
+      Consider $n = k + 1$\\
+      LHS = $1(10) + 2(11) + 3(12) + \dots + k(k + 9) + (k + 1)(k + 10)$\\
+      LHS = $\frac{k(k + 1)(k + 14)}{3} + (k + 1)(k + 10)$\\
+      LHS = $\frac{k(k + 1)(k + 14) + 3(k + 1)(k + 10)}{3}$\\
+      LHS = $\frac{k^3 + 18k^2 + 47k + 30}{3}$\\
+      RHS = $\frac{(k+1)(k+2)(k+15)}{3}$\\
+      RHS = $\frac{k^3 + 18k^2 + 47k + 30}{3}$
+    \end{proof}
+  \end{problem}
+
+  \begin{problem}{4}
+    Use the Principle of Mathematical Induction to prove that:
+    \begin{center}
+      $7$ is a divisor of $6 * 4^n + 11^n$, for all integers $n \ge 0$.
+    \end{center}
+    \begin{proof}
+      Basis Step: n = 1\\
+      $7(u) = 6 * 4^n + 11^n$, where $u \in \mathbf{Z}$\\
+      $7(u) = 6 * 4 + 11 = 35 = 7(5)$\\
+      Inductive Step: n = k\\
+      $7(u) = 6 * 4^k + 11^k$\\
+      $7(u) = 6 * 44^k$\\
+      Consider n = k + 1\\
+      $7(u) = 6 * 4^{k + 1} + 11^{k + 1}$\\
+      $7(u) = 6 * 44^{k + 1}$
+    \end{proof}
+  \end{problem}
+\end{document}

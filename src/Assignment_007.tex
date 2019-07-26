@@ -1,0 +1,226 @@
+%
+% @author   Shmish  "shmish90@gmail.com"
+% @legal    MIT     "(c) Christopher Schmitt"
+%
+
+
+\documentclass{article}
+
+
+%
+% Document Imports
+%
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{color}
+\usepackage{tikz}
+
+
+
+%
+% Document Configuation
+%
+
+\newcommand{\hwAuthor}{Christopher Schmitt}
+\newcommand{\hwSubject}{Math 218}
+\newcommand{\hwSection}{Section 81}
+\newcommand{\hwSemester}{Summer 2019}
+\newcommand{\hwAssignment}{Assignment 7}
+
+
+%
+% Document Enviornments
+%
+
+\setlength{\headheight}{65pt}
+\pagestyle{fancy}
+\lhead{\hwAuthor}
+\rhead{
+  \hwSubject \\
+  \hwSection \\
+  \hwSemester \\
+  \hwAssignment
+}
+
+\newenvironment{problem}[1]{
+  \nobreak\section*{Problem #1}
+}{}
+
+
+%
+% Document Start
+%
+
+\begin{document}
+  \begin{problem}{1}
+    Let $S_n = 1(5) + 2(6) + \dots + n(n + 4)$. Make a table that shows the values $S_1$ through $S_10$.
+    \begin{enumerate}
+      \item[] $S_1 = 5$
+      \item[] $S_2 = 17$
+      \item[] $S_3 = 38$
+      \item[] $S_4 = 70$
+      \item[] $S_5 = 115$
+      \item[] $S_6 = 175$
+      \item[] $S_7 = 252$
+      \item[] $S_8 = 348$
+      \item[] $S_9 = 465$
+      \item[] $S_{10} = 605$
+    \end{enumerate}
+    Try finding a pattern in the table.
+    \begin{enumerate}
+      \item[] $S_1 * 3 = 15 = 1 * 15$
+      \item[] $S_2 * 3 = 51 = 3 * 17$
+      \item[] $S_3 * 3 = 114 = 6 * 19$
+      \item[] $S_4 * 3 = 210 = 10 * 21$
+      \item[] $S_5 * 3 = 345 = 15 * 23$
+      \item[] $S_6 * 3 = 525 = 21 * 25$
+      \item[] $S_7 * 3 = 756 = 28 * 27$
+      \item[] $S_8 * 3 = 1044 = 36 * 29$
+      \item[] $S_9 * 3 = 1395 = 45 * 31$
+      \item[] $S_{10} * 3 = 1815 = 55 * 33$
+    \end{enumerate}
+    Devise a formula for $S_i$
+    \begin{center}
+      $S_i = \frac{i(i + 1)(2i + 13)}{6}$
+    \end{center}
+    Prove the formula.
+    \begin{proof}
+      Basis Step
+      \begin{equation*}
+        \begin{split}
+          LHS & = 1(5) = 5\\
+          RHS & = \frac{1(1 + 1)(2(1) + 13)}{6} = 5
+        \end{split}
+      \end{equation*}
+      Inductive Step:\\
+      Suppose that the expression works for $i = n$.
+      \begin{equation*}
+        \begin{split}
+          LHS & = 1(5) + 2(6) + \dots + n(n + 4)\\
+          RHS & = \frac{n(n + 1)(2n + 13)}{6}
+        \end{split}
+      \end{equation*}
+      Now consider $i = n + 1$
+      \begin{equation*}
+        \begin{split}
+          LHS & = 1(5) + 2(6) + \dots + n(n + 4) + (n + 1)(n + 5)\\
+          LHS & = \frac{n(n + 1)(2n + 13)}{6} + (n + 1)(n + 5)\\
+          LHS & = \frac{2n^3 + 21n^2 + 45n + 30}{6}\\
+          RHS & = \frac{(n + 1)(n + 2)(2(n + 1) + 13)}{6}\\
+          RHS & = \frac{2n^3 + 21n^2 + 45n + 30}{6}
+        \end{split}
+      \end{equation*}
+    \end{proof}
+  \end{problem}
+
+  \begin{problem}{2}
+    Determine the value of $x$ so that $04393x8078$ is a valid ISBN.
+    \begin{center}
+      $10(0) + 9(4) + 8(3) + 7(9) + 6(3) + 5(x) + 4(8) + 3(0) + 2(7) + 1(8)$\\
+      $0 + 36 + 24 + 63 + 18 + 5x + 32 + 0 + 14 + 8$\\
+      $195 + 5(x) = 11(y)$, where $x, y \in \mathbf{Z}$\\
+      $195 + 5(5) = 11(20)$\\
+      $x = 5$
+    \end{center}
+  \end{problem}
+
+  \begin{problem}{3}
+    Use the Chinese Remainder Theorem to solve the following system of congruences:
+    \begin{center}
+      $x \equiv 10 \pmod{13}$\\
+      $x \equiv 5 \pmod{17}$
+    \end{center}
+    \begin{enumerate}
+      \item [] $M = m_1m_2 = 13 * 17 = 221$
+      \item [] $M_1 = \frac{M}{m_1} = 17$
+      \item [] $M_2 = \frac{M}{m_2} = 13$
+      \item [] $y_1 = 17(k) \equiv \pmod{13} = 10$
+      \item [] $y_2 = 13(k) \equiv \pmod{17} = 4$
+      \item [] $x = a_1 * M_1 * y_1 + a_2 * M_2 * y_2$
+      \item [] $x = 10 * 17 * 4 + 5 * 5 * 4 = 780$
+    \end{enumerate}
+  \end{problem}
+
+  \begin{problem}{4}
+    Jim wants to use the RSA Algorithm, as described on page $141$ of our textbook, to send a message. However, Jim does not understand that, in order for the algorithm to be secure, the two primes $p$ and $q$ that he selects must be large. Consequently, he selected two small primes, and made the values of $r = 341$ and $s = 17$ public.
+    \begin{enumerate}
+      \item [] If the message that Jim wants to send is M = 19, what will the encrypted message E be?
+      \item [] $n = rs = 341(17) = 5797$
+      \item [] $e = 7$
+      \item [] $7(4663) \equiv 1 \pmod{5440}$
+      \item [] $d = 4663$
+      \item [] $E = M^e \mod n = 19^7 \mod 5797 = 984$
+      \item [] Since Jim picked two small primes, you will be able to determine his supposedly secret p and q. Do so, and by using the procedure from the text, determine the original message M if the encrypted message is E = 197.
+      \item [] $C^d \mod n = p$
+      \item [] $197^{4663} \mod 5797 = 362$
+    \end{enumerate}
+  \end{problem}
+
+  \begin{problem}{5}
+    Use the characteristic equation to solve the recurrence relation
+    \begin{center}
+      $a_n = 6a_{n-1} - 8a_{n-2}, n \le 2$, given $a_0 = 4, a_1 = 14$
+    \end{center}
+    \begin{equation*}
+      \begin{split}
+        r^2 - 6r + 8 & = 0\\
+        (r - 2)(r - 4) & = 0\\
+        2, 4 & = r
+      \end{split}
+    \end{equation*}
+    \begin{equation*}
+      \begin{split}
+        a_n & = k_1 * 2^n + k_2 * 4^n\\
+        4 & = k_1 * 2^0 + k_2 * 4^0\\
+        14 & = k_1 * 2^1 + k_2 * 4^1\\
+        k_1 & = 1\\
+        k_2 & = 3\\
+        a_n & = 1(2^n) + 3(4^n)
+      \end{split}
+    \end{equation*}
+  \end{problem}
+
+  \begin{problem}{6}
+    How many integers between 1 and 100,000 (inclusive) are relatively prime to 1595?
+    \begin{center}
+      $1595 = 5 * 11 * 29$
+      \begin{equation*}
+        \begin{split}
+          + &\ 100000\\
+          - & \text{ multiples of } 5\ (20000)\\
+          - & \text{ multiples of } 11\ (9090)\\
+          - & \text{ multiples of } 29\ (3448)\\
+          + & \text{ multiples of } 5 * 11\ (1818)\\
+          + & \text{ multiples of } 5 * 29\ (689)\\
+          + & \text{ multiples of } 11 * 29\ (313)\\
+          - & \text{ multiples of } 5 * 11 * 29\ (62)\\
+          = &\ 70220
+        \end{split}
+      \end{equation*}
+    \end{center}
+
+    How many license plates can be made if each license plate contains six characters, the first four characters are letters and the last two characters are digits, and the letters must all be distinct (but the digits need not be distinct)?
+    \begin{center}
+      $26 * 25 * 24 * 23 * 10 * 10 = 35880000$
+    \end{center}
+
+    In a group of 93 people, how many must have been born on the same day of the week (i.e., Sunday, Monday, Tuesday, etc.)
+    \begin{center}
+      $\left \lceil{93/7}\right \rceil = 14$
+    \end{center}
+
+    I have thirteen different toys (only one copy of each), and I want to give one toy to each of five children. In how many ways can this be done?
+    \begin{equation*}
+      \begin{split}
+        x & = \frac{n!}{r! * (n - r)!} * r!\\
+        x & = \frac{13!}{5! * (13 - 5)!} * 5!\\
+        x & = 1554440
+      \end{split}
+    \end{equation*}
+  \end{problem}
+\end{document}

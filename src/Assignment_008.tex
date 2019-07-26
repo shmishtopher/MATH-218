@@ -1,0 +1,101 @@
+%
+% @author   Shmish  "shmish90@gmail.com"
+% @legal    MIT     "(c) Christopher Schmitt"
+%
+
+
+\documentclass{article}
+
+
+%
+% Document Imports
+%
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{color}
+\usepackage{tikz}
+
+
+
+%
+% Document Configuation
+%
+
+\newcommand{\hwAuthor}{Christopher Schmitt}
+\newcommand{\hwSubject}{Math 218}
+\newcommand{\hwSection}{Section 81}
+\newcommand{\hwSemester}{Summer 2019}
+\newcommand{\hwAssignment}{Assignment 8}
+
+
+%
+% Document Enviornments
+%
+
+\setlength{\headheight}{65pt}
+\pagestyle{fancy}
+\lhead{\hwAuthor}
+\rhead{
+  \hwSubject \\
+  \hwSection \\
+  \hwSemester \\
+  \hwAssignment
+}
+
+\newenvironment{problem}[1]{
+  \nobreak\section*{Problem #1}
+}{}
+
+
+%
+% Document Start
+%
+
+\begin{document}
+  \begin{problem}{1}
+    Solve each of the following counting problems, writing your answer as an integer in the standard decimal notation.\par
+    In how many ways can a student club that consists of 20 students select 3 students to attend a conference?
+    $$\binom{20}{3} = 1140$$
+
+    How many strings of 0s and 1s have length 11 and have exactly eight ones?
+    $$\binom{11}{8} = 165$$
+
+    How many strings of 0s and 1s have length 11 and have at most three ones?
+    $$2^{11} - 2^{7} = 1920$$
+
+    A donut shop has donuts in six different flavors: chocolate frosted, chocolate creme, glazed, jelly, plain, and Boston creme. The donut shop has an unlimited supply of each flavor. In how many different ways can the donut shop create a box of 18 donuts? Note that the box can include multiple donuts of the same flavor, and that donuts of the same flavor are considered indistinguishable.
+    $$\binom{n + r - 1}{r} = \binom{6 + 18 - 1}{18} = \binom{23}{18} = 33649$$
+
+    The donut shop now wants to create a box of 18 donuts, including at least four glazed ones. In how many ways can this be done?
+    $$\binom{n + r - 1}{r} = \binom{6 + 14 - 1}{14} = \binom{19}{14} = 11628$$
+
+    The donut shop now wants to create a box of 18 donuts, including at most four glazed ones. In how many ways can this be done?
+    $$\binom{6 + 18 - 1}{18} - \binom{6 + 13 - 1}{13}= \binom{23}{18} - \binom{18}{13} = 33649 - 8568 = 25018$$
+
+    The donut shop now wants to create a box of 18 donuts, including exactly four glazed ones. In how many ways can this be done?
+    $$1 * \binom{5 + 14 - 1}{14} = \binom{18}{14} = 3060$$
+
+    I want to buy one donut every day from Monday through Friday at the donut shop. In how many ways can this be done?
+    $$\binom{n + r - 1}{r} = \binom{6 + 5 - 1}{5} = 252$$
+
+    How many “words” can be formed by rearranging the letters of the word MATHEMATICALLY? The “words” do not have to be actual English words.
+    $$\frac{14!}{2! * 3! * 2! * 2!} = 1816214400$$
+
+    Find the coefficient of $x^8y^4$ in the expansion of the binomial $(x + 2y)^{12}$
+    $$\binom{12}{4} = 495$$
+    $$495(x^8)(2y^4) = 990x^8y^4$$
+  \end{problem}
+
+  \begin{problem}{2}
+    $$(x + y)^{2k} = \sum_{i=0}^{2k} x^i y^{2k - 1} \binom{2k}{i}$$
+    $$(x + y)^{2J + 1} = \sum_{i=0}^{2J + 1} x^i y^{2J} \binom{2J + 1}{i}$$
+    Theorem: $$\sum_{0 \le i \le n, n\ odd} \binom{n}{i} = \sum_{0 \le i \le n, n\ even} \binom{n}{i}$$
+    $$\sum \binom{2k+1}{i} = \sum \binom{2j}{i}$$
+    $$?$$
+  \end{problem}
+\end{document}
